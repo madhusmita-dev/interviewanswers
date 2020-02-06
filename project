@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Project</title>
+</head>
+<script>
+    var acctData = [{ "acctNum": "AAA - 1234", "user": "Alice" },
+    { "acctNum": "AAA - 5231", "user": "Bob" },
+    { "acctNum": "AAA - 9921", "user": "Alice" },
+    { "acctNum": "AAA - 8191", "user": "Alice" }]
+
+    acctData.forEach((item, index) => {
+        //acctData.sort();
+        // item.acctNum.sort()
+        // alert(item.acctNum)
+        alert(`${item.user} is at index, ${index}`);
+        acctData.sort(function (a, b) { return a - b; });
+        // alert(acctData)
+    });
+    var balance = {
+        "AAA - 1234": 4593.22,
+        "AAA - 9921": 0,
+        "AAA - 5231": 232142.5,
+        "AAA - 8191": 4344
+    };
+    let xData = acctData.sort((a, b) => { return balance[a.acctNum] - balance[b.acctNum] });
+    alert(JSON.stringify(xData))
+    let yData = acctData.sort((a, b) => { return balance[b.acctNum] - balance[a.acctNum] });
+    alert(JSON.stringify(yData))
+    var marvelHeroes =  acctData.filter(function(a) {
+	return balance[a.acctNum];
+});
+    alert(JSON.stringify(marvelHeroes))
+
+
+</script>
+
+<body></body>
+
+</html>
+.border_color{
+    border-style: solid;
+    border-width: 5px;
+    border-color: #1dc8d5;
+    width: 50%;
+    height: 50%;
+}
+.avail_txt{
+    margin-bottom: 0px;
+    float: right;
+    text-align: right;
+}
+.today_txt{
+    margin-bottom: 0px;
+    color: #0000007a;
+}
+
+.account_txt{
+    margin-top: 23px;
+}
+.account_avail{
+    background-color:#cec1c114 ; ;
+}
+.avail_today{
+    background-color: #c2b5b538;
+}
+.ira_txt{
+    color: #08a2bbf5;
+    font-size: 32px;
+    font-weight: 600;
+}
+.rupess_txt{
+    font-size: 23px;
+    font-weight: 600;
+    margin-top: 13px;
+    text-align: right;
+}
+.line_txt{
+    height: 3px;
+    width: 100%;
+    background-color: #c9c9c91f;
+    border-radius: 4px;
+    margin-bottom: 0px;
+}
+.load_txt{
+    text-align: center;
+    padding: 25px 10px;
+    margin-bottom: 0px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #08a2bbf5;
+}
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Project</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="./project.css">
+</head>
+
+<body>
+    <div class="container border_color">
+    <header>
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-6 account_avail">
+                <p class="account_txt">Account</p></div>
+            <div class="col-md-6 col-sm-6 col-xs-6 avail_today">
+                <span class="avail_txt">^Available Cash
+                <p class="today_txt">Today's Change</p></span>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <p class="account_txt ira_txt">IRA-5200 </p></div>
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <span class="avail_txt rupess_txt">$5,763.36
+                <p class="today_txt" style="color:#ff0000de">-0.08%/$8,916.69</p></span>
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <p class="line_txt"></p>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <p class="account_txt ira_txt">AAA-1812 </p></div>
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <span class="avail_txt rupess_txt">$5,763.36
+                <p class="today_txt" style="color: #046104eb;">-0.08%/$8,916.69</p></span>
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <p class="line_txt"></p>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <p class="account_txt ira_txt">AAA-3810 </p></div>
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <span class="avail_txt rupess_txt">$5,763.36
+                <p class="today_txt" style="color: #046104eb;">-0.08%/$8,916.69</p></span>
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <p class="line_txt"></p>
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <p class="load_txt">Load More</p>
+            </div>
+        </div>
+    </section>
+</div>
+</body>
+
+</html>
